@@ -16,7 +16,6 @@ css: |-
     align-items: center;
     height: 100vh;
     text-align: center;
-    page-break-after: always;
   }
   .portada h1 {
     font-size: 32pt;
@@ -49,10 +48,16 @@ css: |-
     border-bottom: 2px solid #2b6cb0;
     padding-bottom: 6px;
     margin-top: 30px;
-    page-break-before: always;
   }
-  h1:first-of-type {
-    page-break-before: avoid;
+  .portada h1 {
+    border-bottom: none;
+  }
+  hr {
+    page-break-after: always;
+    border: none;
+    margin: 0;
+    padding: 0;
+    height: 0;
   }
   h2 {
     font-size: 14pt;
@@ -147,11 +152,13 @@ css: |-
 
 **Repositorio:** https://github.com/kristiangarcia/Proyecto_Implantacion_SGE
 
-**Curso:** 2024 - 2025
+**Curso:** 2025 - 2026
 
 </div>
 
 </div>
+
+---
 
 # INDICE
 
