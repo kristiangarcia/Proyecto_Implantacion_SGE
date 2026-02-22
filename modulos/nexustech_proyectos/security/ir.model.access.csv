@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acceso_proyecto,nexustech.proyecto.todos,model_nexustech_proyecto,,1,1,1,1
+acceso_tarea,nexustech.tarea.todos,model_nexustech_tarea,,1,1,1,1
+acceso_registro_horas,nexustech.registro.horas.todos,model_nexustech_registro_horas,,1,1,1,1

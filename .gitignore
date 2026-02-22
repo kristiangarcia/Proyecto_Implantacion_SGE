@@ -1,0 +1,23 @@
+# Archivos del sistema
+*.pyc
+__pycache__/
+*.pyo
+
+# PDFs del enunciado (no son parte del proyecto)
+SGE - TEMA5 - Práctica Final - Proyecto de Implantación.pdf
+SGE - TEMA 5 - IMPLANTACIÓN ERP-CRM.pdf
+
+# Imágenes temporales generadas
+page_*.png
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

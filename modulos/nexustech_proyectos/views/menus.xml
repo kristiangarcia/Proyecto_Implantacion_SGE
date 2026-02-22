@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menú principal de NexusTech -->
+    <menuitem id="menu_nexustech_principal"
+              name="NexusTech Proyectos"
+              sequence="10"/>
+
+    <!-- Submenú: Gestión -->
+    <menuitem id="menu_nexustech_gestion"
+              name="Gestión"
+              parent="menu_nexustech_principal"
+              sequence="10"/>
+
+    <!-- Elemento de menú: Proyectos -->
+    <menuitem id="menu_proyectos"
+              name="Proyectos"
+              parent="menu_nexustech_gestion"
+              action="accion_proyecto"
+              sequence="10"/>
+
+    <!-- Elemento de menú: Tareas -->
+    <menuitem id="menu_tareas"
+              name="Tareas"
+              parent="menu_nexustech_gestion"
+              action="accion_tarea"
+              sequence="20"/>
+
+    <!-- Elemento de menú: Registro de Horas -->
+    <menuitem id="menu_registro_horas"
+              name="Registro de Horas"
+              parent="menu_nexustech_gestion"
+              action="accion_registro_horas"
+              sequence="30"/>
+</odoo>

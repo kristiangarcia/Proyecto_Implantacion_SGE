@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista formulario de Registro de Horas -->
+    <record id="vista_formulario_registro_horas" model="ir.ui.view">
+        <field name="name">nexustech.registro.horas.formulario</field>
+        <field name="model">nexustech.registro.horas</field>
+        <field name="arch" type="xml">
+            <form string="Registro de Horas">
+                <sheet>
+                    <group>
+                        <group string="Datos del Registro">
+                            <field name="tarea_id"/>
+                            <field name="empleado_id"/>
+                            <field name="fecha"/>
+                            <field name="horas"/>
+                        </group>
+                    </group>
+                    <group string="Descripción">
+                        <field name="descripcion" placeholder="Describe el trabajo realizado..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista lista de Registro de Horas -->
+    <record id="vista_lista_registro_horas" model="ir.ui.view">
+        <field name="name">nexustech.registro.horas.lista</field>
+        <field name="model">nexustech.registro.horas</field>
+        <field name="arch" type="xml">
+            <list string="Registros de Horas" editable="bottom">
+                <field name="tarea_id"/>
+                <field name="empleado_id"/>
+                <field name="fecha"/>
+                <field name="horas"/>
+                <field name="descripcion"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acción de ventana para Registro de Horas -->
+    <record id="accion_registro_horas" model="ir.actions.act_window">
+        <field name="name">Registro de Horas</field>
+        <field name="res_model">nexustech.registro.horas</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

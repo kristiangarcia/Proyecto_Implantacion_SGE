@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista formulario de Tarea -->
+    <record id="vista_formulario_tarea" model="ir.ui.view">
+        <field name="name">nexustech.tarea.formulario</field>
+        <field name="model">nexustech.tarea</field>
+        <field name="arch" type="xml">
+            <form string="Tarea de Proyecto">
+                <sheet>
+                    <field name="imagen" widget="image" class="oe_avatar"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="nombre" placeholder="Nombre de la tarea..."/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Información">
+                            <field name="proyecto_id"/>
+                            <field name="responsable_id"/>
+                            <field name="fecha_limite"/>
+                        </group>
+                        <group string="Estado">
+                            <field name="prioridad"/>
+                            <field name="estado"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Descripción">
+                            <field name="descripcion" placeholder="Describe la tarea..."/>
+                        </page>
+                        <page string="Registro de Horas">
+                            <field name="registro_ids">
+                                <list editable="bottom">
+                                    <field name="empleado_id"/>
+                                    <field name="fecha"/>
+                                    <field name="horas"/>
+                                    <field name="descripcion"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista lista de Tarea -->
+    <record id="vista_lista_tarea" model="ir.ui.view">
+        <field name="name">nexustech.tarea.lista</field>
+        <field name="model">nexustech.tarea</field>
+        <field name="arch" type="xml">
+            <list string="Tareas">
+                <field name="nombre"/>
+                <field name="proyecto_id"/>
+                <field name="responsable_id"/>
+                <field name="prioridad"/>
+                <field name="estado"/>
+                <field name="fecha_limite"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acción de ventana para Tareas -->
+    <record id="accion_tarea" model="ir.actions.act_window">
+        <field name="name">Tareas</field>
+        <field name="res_model">nexustech.tarea</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

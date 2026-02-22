@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista formulario heredada de res.partner para añadir campos NexusTech -->
+    <record id="vista_partner_nexustech" model="ir.ui.view">
+        <field name="name">res.partner.nexustech.herencia</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <page string="NexusTech" name="nexustech_info">
+                    <group>
+                        <group string="Datos NexusTech">
+                            <field name="es_cliente_nexustech"/>
+                            <field name="nivel_soporte"/>
+                        </group>
+                    </group>
+                    <group string="Proyectos Asociados">
+                        <field name="proyecto_ids">
+                            <list>
+                                <field name="nombre"/>
+                                <field name="estado"/>
+                                <field name="presupuesto"/>
+                                <field name="fecha_inicio"/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

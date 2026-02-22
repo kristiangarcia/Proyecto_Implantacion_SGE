@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista formulario heredada de CRM Lead - añadir campos NexusTech -->
+    <record id="vista_crm_lead_formulario_nexustech" model="ir.ui.view">
+        <field name="name">crm.lead.formulario.nexustech</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='extra']" position="after">
+                <page string="NexusTech" name="nexustech_datos">
+                    <group>
+                        <group string="Servicio">
+                            <field name="tipo_servicio"/>
+                            <field name="es_urgente"/>
+                        </group>
+                        <group string="Económico">
+                            <field name="presupuesto_estimado"/>
+                            <field name="rentabilidad"/>
+                        </group>
+                    </group>
+                    <group string="Notas Técnicas">
+                        <field name="notas_tecnicas" placeholder="Añade notas técnicas sobre esta oportunidad..."/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Vista lista heredada de CRM Lead - añadir columnas -->
+    <record id="vista_crm_lead_lista_nexustech" model="ir.ui.view">
+        <field name="name">crm.lead.lista.nexustech</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="tipo_servicio" optional="show"/>
+                <field name="es_urgente" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Vista búsqueda heredada de CRM Lead - añadir filtros -->
+    <record id="vista_crm_lead_busqueda_nexustech" model="ir.ui.view">
+        <field name="name">crm.lead.busqueda.nexustech</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='myactivities']" position="after">
+                <separator/>
+                <filter string="Urgentes" name="filtro_urgentes" domain="[('es_urgente','=',True)]"/>
+                <filter string="Consultoría" name="filtro_consultoria" domain="[('tipo_servicio','=','consultoria')]"/>
+                <filter string="Desarrollo" name="filtro_desarrollo" domain="[('tipo_servicio','=','desarrollo')]"/>
+                <separator/>
+                <group expand="0" string="Agrupar por">
+                    <filter string="Tipo de Servicio" name="agrupar_tipo" context="{'group_by':'tipo_servicio'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
