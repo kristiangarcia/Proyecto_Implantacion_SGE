@@ -5,34 +5,41 @@ body_class: pdf-document
 css: |-
   body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    font-size: 11pt;
-    line-height: 1.5;
+    font-size: 12pt;
+    line-height: 1.6;
     color: #1a1a1a;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
   }
   .portada {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 120px 0 80px 0;
     text-align: center;
   }
   .portada h1 {
-    font-size: 32pt;
+    font-size: 28pt;
     font-weight: 700;
     color: #1a365d;
     margin-bottom: 10px;
     border: none;
+    page-break-before: avoid;
   }
   .portada h2 {
-    font-size: 16pt;
+    font-size: 14pt;
     font-weight: 400;
     color: #4a5568;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     border: none;
   }
   .portada .datos {
-    font-size: 12pt;
+    font-size: 11pt;
     color: #2d3748;
     line-height: 2;
   }
@@ -40,52 +47,49 @@ css: |-
     width: 200px;
     height: 3px;
     background: #2b6cb0;
-    margin: 30px auto;
+    margin: 25px auto;
   }
   h1 {
-    font-size: 20pt;
+    font-size: 18pt;
     color: #1a365d;
     border-bottom: 2px solid #2b6cb0;
-    padding-bottom: 6px;
-    margin-top: 30px;
-  }
-  .portada h1 {
-    border-bottom: none;
+    padding-bottom: 5px;
+    margin-top: 25px;
   }
   hr {
-    page-break-after: always;
     border: none;
+    height: 0;
     margin: 0;
     padding: 0;
-    height: 0;
+    page-break-after: always;
   }
   h2 {
-    font-size: 14pt;
+    font-size: 13pt;
     color: #2c5282;
     border-bottom: 1px solid #bee3f8;
-    padding-bottom: 4px;
-    margin-top: 20px;
+    padding-bottom: 3px;
+    margin-top: 18px;
   }
   h3 {
-    font-size: 12pt;
+    font-size: 11pt;
     color: #2d3748;
-    margin-top: 15px;
+    margin-top: 12px;
   }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 10pt;
+    margin: 10px 0;
+    font-size: 9pt;
   }
   th {
     background-color: #2b6cb0;
     color: white;
-    padding: 8px 10px;
+    padding: 6px 8px;
     text-align: left;
     font-weight: 600;
   }
   td {
-    padding: 6px 10px;
+    padding: 5px 8px;
     border-bottom: 1px solid #e2e8f0;
   }
   tr:nth-child(even) {
@@ -93,16 +97,16 @@ css: |-
   }
   code {
     background-color: #edf2f7;
-    padding: 2px 5px;
+    padding: 1px 4px;
     border-radius: 3px;
-    font-size: 10pt;
+    font-size: 9pt;
   }
   pre {
     background-color: #1a202c;
     color: #e2e8f0;
-    padding: 14px;
-    border-radius: 6px;
-    font-size: 9pt;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 8pt;
     overflow-x: auto;
   }
   pre code {
@@ -111,10 +115,10 @@ css: |-
     color: #e2e8f0;
   }
   blockquote {
-    border-left: 4px solid #2b6cb0;
-    padding-left: 12px;
+    border-left: 3px solid #2b6cb0;
+    padding-left: 10px;
     color: #4a5568;
-    margin: 10px 0;
+    margin: 8px 0;
   }
   strong {
     color: #1a202c;
@@ -123,10 +127,10 @@ css: |-
     color: #2b6cb0;
   }
   ul, ol {
-    margin: 6px 0;
+    margin: 5px 0;
   }
   @page {
-    margin: 2cm 2.5cm;
+    margin: 2cm;
     size: A4;
   }
   @page:first {
@@ -248,41 +252,9 @@ Los principales procesos de negocio de NexusTech son:
 
 **Actualmente** todos estos procesos se hacen de forma manual: los presupuestos son documentos de Word, la facturacion es manual, el seguimiento de clientes se lleva en Excel, y la comunicacion entre departamentos es por email. No hay trazabilidad real de los procesos ni datos centralizados.
 
-## 1.e. Diagrama de areas funcionales y procesos de negocio
+## 1.e. Organigrama
 
-```
-                    ┌──────────────────────┐
-                    │     DIRECCION         │
-                    │  (Supervision general)│
-                    └──────────┬───────────┘
-                               │
-          ┌────────────────────┼────────────────────┐
-          │                    │                    │
-    ┌─────▼─────┐      ┌──────▼──────┐     ┌──────▼──────┐
-    │  VENTAS   │      │  COMPRAS    │     │    RRHH     │
-    │           │      │             │     │             │
-    │ Presupues.│      │ Pedidos     │     │ Empleados   │
-    │ Pedidos   │      │ Proveedores │     │ Contratos   │
-    │ Facturas  │      │ Recepciones │     │ Nominas     │
-    └─────┬─────┘      └──────┬──────┘     └─────────────┘
-          │                   │
-          │            ┌──────▼──────┐
-          │            │  ALMACEN    │
-          │            │             │
-          │            │ Stock       │
-          │            │ Inventarios │
-          │            │ Entradas    │
-          │            │ Salidas     │
-          │            └─────────────┘
-          │
-    ┌─────▼──────────┐     ┌─────────────────┐
-    │ CONTABILIDAD   │     │ SOPORTE TECNICO │
-    │                │     │                 │
-    │ Facturas       │     │ Tickets         │
-    │ Cobros/Pagos   │     │ Incidencias     │
-    │ Impuestos      │     │ Proyectos IT    │
-    └────────────────┘     └─────────────────┘
-```
+![Organigrama de NexusTech Solutions S.L.](organigrama.png)
 
 ## 1.g. Tipos de S.I. y procesos de negocio
 
@@ -295,49 +267,11 @@ Los principales procesos de negocio de NexusTech son:
 | RRHH | Excel | Nominas, contratos | Archivos Excel en carpeta compartida |
 | Soporte | Email | Tickets de soporte | Correos electronicos, sin seguimiento organizado |
 
-## 1.h. Mapa conceptual del proceso de negocio de la empresa
+## 1.h. Diagramas de flujo de los procesos de negocio
 
-```
-     ┌──────── CLIENTE ────────┐
-     │                         │
-     ▼                         ▼
-  Solicita              Reporta
-  Producto/             Incidencia
-  Servicio
-     │                         │
-     ▼                         ▼
-  ┌──────────┐          ┌──────────┐
-  │PRESUPUES.│          │ TICKET   │
-  │  (Word)  │          │ (Email)  │
-  └────┬─────┘          └────┬─────┘
-       │ Acepta               │ Asignar
-       ▼                      ▼
-  ┌──────────┐          ┌──────────┐
-  │ PEDIDO   │          │ TECNICO  │
-  │ (Excel)  │          │ Resuelve │
-  └────┬─────┘          └────┬─────┘
-       │                     │
-       ├──── Compra? ────┐   │
-       │                 ▼   │
-       │           ┌──────┐  │
-       │           │PROVEED│  │
-       │           │OReso  │  │
-       │           └───┬──┘  │
-       │               │     │
-       ▼               ▼     ▼
-  ┌──────────┐   ┌──────┐
-  │ FACTURA  │   │ALMACEN│
-  │  (Word)  │   │(Excel)│
-  └────┬─────┘   └──────┘
-       │
-       ▼
-  ┌──────────┐
-  │  COBRO   │
-  │(Contaplus│
-  └──────────┘
-```
+A continuacion se muestran los diagramas de flujo de los tres procesos de negocio principales de la empresa. Cada columna representa un proceso distinto, con los pasos ordenados de arriba a abajo.
 
-Los procesos se representan con **cajas** (son las actividades) y las **flechas** indican el flujo. Las herramientas entre parentesis son las que se usan actualmente. Como se puede ver, los datos estan repartidos entre multiples herramientas sin integracion entre ellas.
+![Diagramas de flujo de los procesos de negocio](diagramas_flujo.png)
 
 ---
 
@@ -428,6 +362,10 @@ Los siguientes modulos se han instalado en Odoo para cubrir las necesidades dete
 | Inventario | stock | Control de stock y almacen |
 | CRM | crm | Gestion de oportunidades comerciales |
 
+**Captura: Modulos instalados en Odoo**
+
+![Modulos instalados en Odoo](captura_modulos.png)
+
 ### Productos en el TPV
 
 Se han importado un minimo de 5 productos para el modulo de Punto de Venta, organizados en varias categorias. Los productos incluyen precio de coste y precio de venta.
@@ -441,6 +379,10 @@ Se han importado productos tanto de software como de hardware. Los productos de 
 ### Clientes
 
 Se han importado 14 clientes desde el archivo `1-1-b-ListadoClientes.xlsx`, todos como empresas con sus datos fiscales, direccion y datos de contacto.
+
+**Captura: Contactos importados en Odoo**
+
+![Lista de contactos importados en Odoo](captura_contactos.png)
 
 ### Proveedores
 
@@ -571,18 +513,7 @@ La implantacion se planifica en las siguientes fases, utilizando dias laborables
 
 ## 5.b. Diagrama de Gantt
 
-```
-DIAGRAMA DE GANTT - PROYECTO DE IMPLANTACION NEXUSTECH
-
-Tarea                          | D1 | D2 | D3 | D4 | D5 | D6 | D7 | D8 | D9 |D10 |D11 |D12 |
--------------------------------|----|----|----|----|----|----|----|----|----|----|----|----|
-Instalacion Odoo y modulos     | ## |    |    |    |    |    |    |    |    |    |    |    |
-Configuracion de modulos       |    | ## | ## |    |    |    |    |    |    |    |    |    |
-Formacion de usuarios          |    |    |    | ## | ## | ## |    |    |    |    |    |    |
-Carga de datos                 |    |    |    |    |    |    | ## | ## |    |    |    |    |
-Periodo de pruebas             |    |    |    |    |    |    |    |    | ## | ## | ## |    |
-Migracion definitiva           |    |    |    |    |    |    |    |    |    |    |    | ## |
-```
+![Diagrama de Gantt del proyecto de implantacion](gantt.png)
 
 **Respuestas a las preguntas de planificacion:**
 
