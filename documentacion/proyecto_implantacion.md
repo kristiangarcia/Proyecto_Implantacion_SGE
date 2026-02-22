@@ -1,16 +1,157 @@
+---
+stylesheet:
+  - https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap
+body_class: pdf-document
+css: |-
+  body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+  }
+  .portada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    page-break-after: always;
+  }
+  .portada h1 {
+    font-size: 32pt;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 10px;
+    border: none;
+  }
+  .portada h2 {
+    font-size: 16pt;
+    font-weight: 400;
+    color: #4a5568;
+    margin-bottom: 40px;
+    border: none;
+  }
+  .portada .datos {
+    font-size: 12pt;
+    color: #2d3748;
+    line-height: 2;
+  }
+  .portada .linea {
+    width: 200px;
+    height: 3px;
+    background: #2b6cb0;
+    margin: 30px auto;
+  }
+  h1 {
+    font-size: 20pt;
+    color: #1a365d;
+    border-bottom: 2px solid #2b6cb0;
+    padding-bottom: 6px;
+    margin-top: 30px;
+    page-break-before: always;
+  }
+  h1:first-of-type {
+    page-break-before: avoid;
+  }
+  h2 {
+    font-size: 14pt;
+    color: #2c5282;
+    border-bottom: 1px solid #bee3f8;
+    padding-bottom: 4px;
+    margin-top: 20px;
+  }
+  h3 {
+    font-size: 12pt;
+    color: #2d3748;
+    margin-top: 15px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 10pt;
+  }
+  th {
+    background-color: #2b6cb0;
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  tr:nth-child(even) {
+    background-color: #f7fafc;
+  }
+  code {
+    background-color: #edf2f7;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 10pt;
+  }
+  pre {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 9pt;
+    overflow-x: auto;
+  }
+  pre code {
+    background: none;
+    padding: 0;
+    color: #e2e8f0;
+  }
+  blockquote {
+    border-left: 4px solid #2b6cb0;
+    padding-left: 12px;
+    color: #4a5568;
+    margin: 10px 0;
+  }
+  strong {
+    color: #1a202c;
+  }
+  a {
+    color: #2b6cb0;
+  }
+  ul, ol {
+    margin: 6px 0;
+  }
+  @page {
+    margin: 2cm 2.5cm;
+    size: A4;
+  }
+  @page:first {
+    margin: 0;
+  }
+---
+
+<div class="portada">
+
 # PROYECTO DE IMPLANTACION
 
 ## Sistemas de Gestion Empresarial - 2 DAM
 
-**Alumno:** Kristian Olav Garcia Paulsen
+<div class="linea"></div>
 
-**Repositorio:** [https://github.com/kristiangarcia/Proyecto_Implantacion_SGE](https://github.com/kristiangarcia/Proyecto_Implantacion_SGE)
+<div class="datos">
+
+**Alumno:** Kristian Olav Garcia Paulsen
 
 **ERP utilizado:** Odoo 19.0
 
 **Empresa ficticia:** NexusTech Solutions S.L.
 
----
+**Repositorio:** https://github.com/kristiangarcia/Proyecto_Implantacion_SGE
+
+**Curso:** 2024 - 2025
+
+</div>
+
+</div>
 
 # INDICE
 
